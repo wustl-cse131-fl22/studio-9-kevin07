@@ -29,8 +29,36 @@ public class WordCount {
 	 */
 	public static Map<String, Integer> countWords(List<String> words) {
 
-		// FIXME
-		throw new NotYetImplementedException();
-
+		Map<String, Integer> wordCount = new HashMap();
+		wordCount.put("to", 0);
+		wordCount.put("be", 0);
+		wordCount.put("or", 0);
+		wordCount.put("not", 0);
+		
+		int size = words.size();
+		
+		for (int i = 0; i < size; i++) {
+			if (words.get(i).equals("to")) {
+				int count = wordCount.get("to") + 1;
+				wordCount.put("to", count);
+			}
+			
+			if (words.get(i).equals("be")) {
+				int count = wordCount.get("be") + 1;
+				wordCount.put("be", count);
+			}
+			
+			if (words.get(i).equals("or")) {
+				int count = wordCount.get("or") + 1;
+				wordCount.put("or", count);
+			}
+			
+			if (words.get(i).equals("not")) {
+				int count = wordCount.get("not") + 1;
+				wordCount.put("not", count);
+			}
+		}
+		
+		return wordCount;
 	}
 }
